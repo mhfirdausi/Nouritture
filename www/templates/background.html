@@ -1,0 +1,14 @@
+<ion-view view-title="Background">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-more"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list>
+            <ion-item collection-repeat="doc in backgroundDocs" class = "item item-avatar" href="#/app/background/{{doc.title}}">
+                <img ng-src="img/{{doc.title}}.jpg" err-src="http://placehold.it/350x150">
+                <h3>{{doc.title}}</h3>
+                <p>{{doc.sections[0]}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

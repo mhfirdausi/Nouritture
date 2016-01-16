@@ -1,0 +1,10 @@
+{
+  "name": "WatsonSouth",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "#/app/search",
+      "proxyUrl": "https://dal09-gateway.watsonplatform.net/instance/556/deepqa/v1/question"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<ion-view>
+  <ion-nav-title>{{whichRecipe}}</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-star-outline" ng-click="favClick(myFavorite); toggleStar(item)"></button>
+    </ion-nav-buttons>
+  <ion-content>
+      <ion-list class="list-inset padding">
+          <ion-item class="item item-text-wrap" ng-repeat="item in recipes | filter: {title: whichRecipe} : true">
+              <img ng-src="img/{{item.title}}.jpg" err-src="http://placehold.it/350x150">
+              <ion-item ng-repeat="(key, value) in item.sections">
+                  <h3 class="item item-divider">{{key}}</h3>
+                  <pre>{{value}}</pre>
+              </ion-item>
+              
+          </ion-item>
+          <button class="button button-positive button-block" ng-click="reciClick()">
+              <i class="icon ion-search"></i>
+              Ask Watson about {{whichRecipe}}
+          </button>
+      </ion-list>
+  </ion-content>
+</ion-view>

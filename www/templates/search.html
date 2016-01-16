@@ -1,0 +1,18 @@
+<ion-view view-title="Ask Watson">
+  <ion-content ng-controller="WatsonCtrl">
+      <form ng-submit="newPost()">
+          <label class="item item-input card">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="text" placeholder="What do you want to know?" ng-model="watsonAskModel.question" />
+          </label>
+          <button type="submit" class="button button-assertive button-full padding">Ask Watson!</button>    
+      </form>
+      <ion-list class="card">
+          <ion-item class="card item item-text-wrap animated slideInUp" ng-repeat="ans in answerList" ng-click="changePage(evidenList[ans.id].title)">
+              <h3>{{evidenList[ans.id].title}}</h3>
+              <p>{{evidenList[ans.id].text | limitTo: 500}}{{evidenList[ans.id].text.length > 500 ? '&hellip;' : ''}}</p>
+              <h4>Confidence level: {{ans.confidence}}</h4>
+          </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>

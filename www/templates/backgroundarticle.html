@@ -1,0 +1,18 @@
+﻿<ion-view view-title="Background Article">
+    <ion-nav-title>{{whichDoc}}</ion-nav-title>
+    <ion-content>
+        <ion-list class="list-inset padding">
+            <ion-item class="item-text-wrap" ng-repeat="item in backgroundDocs | filter: {title: whichDoc} : true">
+                <img ng-src="img/{{item.title}}.jpg" err-src="http://placehold.it/350x150">
+                <ion-item ng-repeat="(key, value) in item.sections">
+                    <h3 class="item item-divider">{{key}}</h3>
+                    <pre>{{value}}</pre>
+                </ion-item>
+            </ion-item>
+            <button class="button button-positive button-block" ng-click="docClick()" ng-show="enableBackdocButton">
+                <i class="icon ion-search"></i>
+                Ask Watson about {{backDocButton}}
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-view>

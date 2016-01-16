@@ -1,0 +1,14 @@
+﻿<ion-view view-title="Collections">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-more" ng-click="order('-title', false)"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item item-avatar item-icon-right item-text-wrap" ng-repeat="thisCol in collective" href="#/app/collections/{{thisCol.title}}">
+                <img ng-src="img/{{thisCol.title}}.jpg" err-src="http://placehold.it/350x150">
+                <h3>{{thisCol.title}}</h3>
+                <h4>{{thisCol.sections.$first | limitTo: 100}}{{col.sections.$first.length > 100 ? '&hellip;' : ''}}</h4>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
